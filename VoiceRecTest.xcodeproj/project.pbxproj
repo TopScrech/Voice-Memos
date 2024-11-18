@@ -16,7 +16,7 @@
 		027811D428897A5600A4A61D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811D328897A5600A4A61D /* Extensions.swift */; };
 		027811D728897A8600A4A61D /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811D628897A8600A4A61D /* AudioRecorder.swift */; };
 		027811D928897A9900A4A61D /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811D828897A9900A4A61D /* AudioPlayer.swift */; };
-		027811DB28897AD200A4A61D /* RecordingsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811DA28897AD200A4A61D /* RecordingsList.swift */; };
+		027811DB28897AD200A4A61D /* Recordings List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811DA28897AD200A4A61D /* Recordings List.swift */; };
 		027811DD2889932100A4A61D /* PlayerBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811DC2889932100A4A61D /* PlayerBar.swift */; };
 /* End PBXBuildFile section */
 
@@ -32,7 +32,7 @@
 		027811D328897A5600A4A61D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		027811D628897A8600A4A61D /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
 		027811D828897A9900A4A61D /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
-		027811DA28897AD200A4A61D /* RecordingsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordingsList.swift; sourceTree = "<group>"; };
+		027811DA28897AD200A4A61D /* Recordings List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recordings List.swift"; sourceTree = "<group>"; };
 		027811DC2889932100A4A61D /* PlayerBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				027811BF2889753F00A4A61D /* ContentView.swift */,
-				027811DA28897AD200A4A61D /* RecordingsList.swift */,
+				027811DA28897AD200A4A61D /* Recordings List.swift */,
 				027811DC2889932100A4A61D /* PlayerBar.swift */,
 				0236343D288A96D3008A0944 /* RecorderBar.swift */,
 			);
@@ -190,7 +190,7 @@
 				027811C02889753F00A4A61D /* ContentView.swift in Sources */,
 				027811BE2889753F00A4A61D /* VoiceRecTest.xcdatamodeld in Sources */,
 				027811DD2889932100A4A61D /* PlayerBar.swift in Sources */,
-				027811DB28897AD200A4A61D /* RecordingsList.swift in Sources */,
+				027811DB28897AD200A4A61D /* Recordings List.swift in Sources */,
 				027811D728897A8600A4A61D /* AudioRecorder.swift in Sources */,
 				027811D428897A5600A4A61D /* Extensions.swift in Sources */,
 			);
