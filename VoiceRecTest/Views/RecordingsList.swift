@@ -1,12 +1,4 @@
-//
-//  RecordingsList.swift
-//  VoiceRecTest
-//
-//  Created by Umayanga Alahakoon on 2022-07-21.
-//
-
 import SwiftUI
-import CoreData
 import AVFoundation
 
 struct RecordingsList: View {
@@ -15,7 +7,9 @@ struct RecordingsList: View {
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Recording.createdAt, ascending: true)],
-        animation: .default)
+        animation: .default
+    )
+    
     private var recordings: FetchedResults<Recording>
     
     var body: some View {
@@ -23,19 +17,21 @@ struct RecordingsList: View {
             ForEach(recordings, id: \.id) { recording in
                 RecordingRow(audioPlayer: audioPlayer, recording: recording)
             }
-                .onDelete(perform: delete)
+            .onDelete(perform: delete)
         }
     }
     
     func delete(at offsets: IndexSet) {
         withAnimation {
-            offsets.map { recordings[$0] }.forEach(moc.delete)
-
+            offsets.map {
+                recordings[$0]
+            }.forEach(moc.delete)
+            
             do {
                 try moc.save()
             } catch {
-                let nsError = error as NSError
-                fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
+                let error = error as NSError
+                fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         }
     }
@@ -54,6 +50,7 @@ struct RecordingRow: View {
             VStack(alignment: .leading) {
                 Text(recording.name ?? "Recording")
                     .fontWeight(isPlayingThisRecording ? .bold : .regular)
+                
                 Group {
                     if let recordingData = recording.recordingData, let duration = getDuration(of: recordingData) {
                         Text(DateComponentsFormatter.positional.string(from: duration) ?? "0:00")
@@ -62,7 +59,9 @@ struct RecordingRow: View {
                     }
                 }
             }
+            
             Spacer()
+            
             Button {
                 audioPlayer.startPlayback(recording: recording)
             } label: {
@@ -85,8 +84,6 @@ struct RecordingRow: View {
     }
 }
 
-struct RecordingsList_Previews: PreviewProvider {
-    static var previews: some View {
-        RecordingsList(audioPlayer: AudioPlayer())
-    }
+#Preview {
+    RecordingsList(audioPlayer: AudioPlayer())
 }

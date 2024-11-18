@@ -1,20 +1,9 @@
-//
-//  AudioRecorder.swift
-//  VoiceRecTest
-//
-//  Created by Umayanga Alahakoon on 2022-07-21.
-//
-
-import Foundation
 import SwiftUI
 import AVFoundation
-import Combine
-import CoreData
 
-class AudioRecorder: NSObject,ObservableObject {
+final class AudioRecorder: NSObject, ObservableObject {
+    private let moc = PersistenceController.shared.container.viewContext
     
-    let moc = PersistenceController.shared.container.viewContext
-
     var audioRecorder: AVAudioRecorder?
     
     @Published private var recordingName = "Recording1"
@@ -50,7 +39,7 @@ class AudioRecorder: NSObject,ObservableObject {
             AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
             AVSampleRateKey: 12000,
             AVNumberOfChannelsKey: 1,
-            AVEncoderAudioQualityKey: AVAudioQuality.high.rawValue
+            AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue
         ]
         
         do {
@@ -60,6 +49,7 @@ class AudioRecorder: NSObject,ObservableObject {
             withAnimation {
                 isRecording = true
             }
+            
             print("Start Recording - Recording Started")
         } catch {
             print("Start Recording - Could not start recording")
@@ -70,6 +60,7 @@ class AudioRecorder: NSObject,ObservableObject {
     
     func stopRecording() {
         audioRecorder?.stop()
+        
         withAnimation {
             isRecording = false
         }
@@ -78,16 +69,15 @@ class AudioRecorder: NSObject,ObservableObject {
             do {
                 let recordingDate = try Data(contentsOf: recordingURL)
                 print("Stop Recording - Saving to CoreData")
+                
                 // save the recording to CoreData
                 saveRecordingOnCoreData(recordingData: recordingDate)
             } catch {
                 print("Stop Recording - Could not save to CoreData - Cannot get the recording data from URL: \(error)")
             }
-            
         } else {
             print("Stop Recording -  Could not save to CoreData - Cannot find the recording URL")
         }
-        
     }
     
     // MARK: - CoreData --------------------------------------
@@ -105,20 +95,19 @@ class AudioRecorder: NSObject,ObservableObject {
             // delete the recording stored in the temporary directory
             deleteRecordingFile()
         } catch {
-            let nsError = error as NSError
-            fatalError("Stop Recording - Failed to save to CoreData - Unresolved error \(nsError), \(nsError.userInfo)")
+            let error = error as NSError
+            fatalError("Stop Recording - Failed to save to CoreData - Unresolved error \(error), \(error.userInfo)")
         }
     }
     
     func deleteRecordingFile() {
         if let recordingURL {
             do {
-               try FileManager.default.removeItem(at: recordingURL)
+                try FileManager.default.removeItem(at: recordingURL)
                 print("Stop Recording - Successfully deleted the recording file")
             } catch {
                 print("Stop Recording - Could not delete the recording file - Cannot find the recording URL")
             }
         }
     }
-    
 }

@@ -1,26 +1,18 @@
-//
-//  RecorderBar.swift
-//  VoiceRecTest
-//
-//  Created by Umayanga Alahakoon on 2022-07-22.
-//
-
 import SwiftUI
 
 struct RecorderBar: View {
-    @ObservedObject var audioRecorder = AudioRecorder()
+    @ObservedObject private var audioRecorder = AudioRecorder()
     @ObservedObject var audioPlayer: AudioPlayer
     
     @State var buttonSize: CGFloat = 1
     
     var repeatingAnimation: Animation {
         Animation.linear(duration: 0.5)
-        .repeatForever()
+            .repeatForever()
     }
     
     var body: some View {
         VStack {
-            
             if let audioRecorder = audioRecorder.audioRecorder, audioRecorder.isRecording {
                 TimelineView(.periodic(from: .now, by: 1)) { _ in
                     // recording duration
@@ -66,6 +58,7 @@ struct RecorderBar: View {
         if audioPlayer.audioPlayer?.isPlaying ?? false {
             // stop any playing recordings
             audioPlayer.stopPlayback()
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 // Start Recording
                 audioRecorder.startRecording()
@@ -83,8 +76,6 @@ struct RecorderBar: View {
     
 }
 
-struct RecorderBar_Previews: PreviewProvider {
-    static var previews: some View {
-        RecorderBar(audioPlayer: AudioPlayer())
-    }
+#Preview {
+    RecorderBar(audioPlayer: AudioPlayer())
 }

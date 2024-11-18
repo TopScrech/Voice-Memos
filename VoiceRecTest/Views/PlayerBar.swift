@@ -1,15 +1,9 @@
-//
-//  PlayerBar.swift
-//  VoiceRecTest
-//
-//  Created by Umayanga Alahakoon on 2022-07-21.
-//
-
 import SwiftUI
 
 struct PlayerBar: View {
     @ObservedObject var audioPlayer: AudioPlayer
-    @State var sliderValue: Double = 0.0
+    
+    @State private var sliderValue = 0.0
     @State private var isDragging = false
     
     let timer = Timer
@@ -19,28 +13,28 @@ struct PlayerBar: View {
     var body: some View {
         if let player = audioPlayer.audioPlayer, let currentlyPlaying = audioPlayer.currentlyPlaying {
             VStack {
-                
-                // Slider
                 Slider(value: $sliderValue, in: 0...player.duration) { dragging in
                     print("Editing the slider: \(dragging)")
                     isDragging = dragging
+                    
                     if !dragging {
                         player.currentTime = sliderValue
                     }
                 }
-                    .tint(.primary)
+                .tint(.primary)
                 
-                // Time passed & Time remaining
+                // Time passed & remaining
                 HStack {
                     Text(DateComponentsFormatter.positional.string(from: player.currentTime) ?? "0:00")
+                    
                     Spacer()
+                    
                     Text("-\(DateComponentsFormatter.positional.string(from: (player.duration - player.currentTime) ) ?? "0:00")")
                 }
                 .font(.caption)
                 .foregroundColor(.secondary)
                 
                 HStack(spacing: 15) {
-                    // Play/Pause Button
                     Button {
                         if audioPlayer.isPlaying {
                             // Pause
@@ -71,7 +65,6 @@ struct PlayerBar: View {
                             .imageScale(.large)
                             .symbolRenderingMode(.hierarchical)
                     }
-                    
                 }
                 .padding(.top, 10)
             }
@@ -91,8 +84,6 @@ struct PlayerBar: View {
     }
 }
 
-struct PlayerBar_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerBar(audioPlayer: AudioPlayer())
-    }
+#Preview {
+    PlayerBar(audioPlayer: AudioPlayer())
 }

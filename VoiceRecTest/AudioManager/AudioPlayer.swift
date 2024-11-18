@@ -1,17 +1,7 @@
-//
-//  AudioPlayer.swift
-//  VoiceRecTest
-//
-//  Created by Umayanga Alahakoon on 2022-07-21.
-//
-
-import Foundation
 import SwiftUI
-import Combine
 import AVFoundation
 
-class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
-
+final class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     @Published var currentlyPlaying: Recording?
     @Published var isPlaying = false
     
@@ -20,7 +10,6 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     func startPlayback(recording: Recording) {
         if let recordingData = recording.recordingData {
             let playbackSession = AVAudioSession.sharedInstance()
-            
             
             do {
                 try playbackSession.setCategory(AVAudioSession.Category.playback, mode: AVAudioSession.Mode.spokenAudio)
@@ -36,17 +25,20 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
                 audioPlayer?.play()
                 isPlaying = true
                 print("Play Recording - Playing")
+                
                 withAnimation(.spring()) {
                     currentlyPlaying = recording
                 }
             } catch {
                 print("Play Recording - Playback failed: - \(error)")
+                
                 withAnimation {
                     currentlyPlaying = nil
                 }
             }
         } else {
             print("Play Recording - Could not get the recording data")
+            
             withAnimation {
                 currentlyPlaying = nil
             }
@@ -56,12 +48,14 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
     func pausePlayback() {
         audioPlayer?.pause()
         isPlaying = false
+        
         print("Play Recording - Paused")
     }
     
     func resumePlayback() {
         audioPlayer?.play()
         isPlaying = true
+        
         print("Play Recording - Resumed")
     }
     
@@ -70,6 +64,7 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
             audioPlayer?.stop()
             isPlaying = false
             print("Play Recording - Stopped")
+            
             withAnimation(.spring()) {
                 self.currentlyPlaying = nil
             }
@@ -82,12 +77,12 @@ class AudioPlayer: NSObject, ObservableObject, AVAudioPlayerDelegate {
         if flag {
             isPlaying = false
             print("Play Recording - Recoring finished playing")
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                withAnimation(.spring()) {
+                withAnimation(.spring) {
                     self.currentlyPlaying = nil
                 }
             }
         }
     }
-    
 }
