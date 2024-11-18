@@ -36,9 +36,9 @@ final class AudioRecorder: NSObject, ObservableObject {
         recordingURL = recordingFileURL
         
         let settings = [
-            AVFormatIDKey: Int(kAudioFormatFLAC),
-            AVSampleRateKey: 12000,
-            AVNumberOfChannelsKey: 1,
+            AVFormatIDKey: Int(kAudioFormatAppleLossless),
+            AVSampleRateKey: 48000,
+            AVNumberOfChannelsKey: 2,
             AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue
         ]
         
