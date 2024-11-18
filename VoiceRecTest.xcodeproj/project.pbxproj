@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0236343E288A96D3008A0944 /* RecorderBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236343D288A96D3008A0944 /* RecorderBar.swift */; };
+		0236343E288A96D3008A0944 /* Recorder Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0236343D288A96D3008A0944 /* Recorder Bar.swift */; };
 		027811B92889753F00A4A61D /* Voice Memos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811B82889753F00A4A61D /* Voice Memos.swift */; };
 		027811BB2889753F00A4A61D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811BA2889753F00A4A61D /* Persistence.swift */; };
 		027811BE2889753F00A4A61D /* VoiceRecTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 027811BC2889753F00A4A61D /* VoiceRecTest.xcdatamodeld */; };
-		027811C02889753F00A4A61D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811BF2889753F00A4A61D /* ContentView.swift */; };
+		027811C02889753F00A4A61D /* Content View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811BF2889753F00A4A61D /* Content View.swift */; };
 		027811C22889754300A4A61D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 027811C12889754300A4A61D /* Assets.xcassets */; };
 		027811D428897A5600A4A61D /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811D328897A5600A4A61D /* Extensions.swift */; };
-		027811D728897A8600A4A61D /* AudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811D628897A8600A4A61D /* AudioRecorder.swift */; };
-		027811D928897A9900A4A61D /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811D828897A9900A4A61D /* AudioPlayer.swift */; };
+		027811D728897A8600A4A61D /* Audio Recorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811D628897A8600A4A61D /* Audio Recorder.swift */; };
+		027811D928897A9900A4A61D /* Audio Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811D828897A9900A4A61D /* Audio Player.swift */; };
 		027811DB28897AD200A4A61D /* Recordings List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811DA28897AD200A4A61D /* Recordings List.swift */; };
-		027811DD2889932100A4A61D /* PlayerBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811DC2889932100A4A61D /* PlayerBar.swift */; };
+		027811DD2889932100A4A61D /* Player Bar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 027811DC2889932100A4A61D /* Player Bar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0236343D288A96D3008A0944 /* RecorderBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecorderBar.swift; sourceTree = "<group>"; };
+		0236343D288A96D3008A0944 /* Recorder Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recorder Bar.swift"; sourceTree = "<group>"; };
 		027811B52889753F00A4A61D /* VoiceRecTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VoiceRecTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		027811B82889753F00A4A61D /* Voice Memos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Voice Memos.swift"; sourceTree = "<group>"; };
 		027811BA2889753F00A4A61D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		027811BD2889753F00A4A61D /* VoiceRecTest.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = VoiceRecTest.xcdatamodel; sourceTree = "<group>"; };
-		027811BF2889753F00A4A61D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		027811BF2889753F00A4A61D /* Content View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Content View.swift"; sourceTree = "<group>"; };
 		027811C12889754300A4A61D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		027811C32889754300A4A61D /* VoiceRecTest.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = VoiceRecTest.entitlements; sourceTree = "<group>"; };
 		027811D328897A5600A4A61D /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
-		027811D628897A8600A4A61D /* AudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioRecorder.swift; sourceTree = "<group>"; };
-		027811D828897A9900A4A61D /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		027811D628897A8600A4A61D /* Audio Recorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Audio Recorder.swift"; sourceTree = "<group>"; };
+		027811D828897A9900A4A61D /* Audio Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Audio Player.swift"; sourceTree = "<group>"; };
 		027811DA28897AD200A4A61D /* Recordings List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recordings List.swift"; sourceTree = "<group>"; };
-		027811DC2889932100A4A61D /* PlayerBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerBar.swift; sourceTree = "<group>"; };
+		027811DC2889932100A4A61D /* Player Bar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player Bar.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +70,7 @@
 				027811C12889754300A4A61D /* Assets.xcassets */,
 				027811C32889754300A4A61D /* VoiceRecTest.entitlements */,
 				027811BC2889753F00A4A61D /* VoiceRecTest.xcdatamodeld */,
-				027811D528897A6800A4A61D /* AudioManager */,
+				027811D528897A6800A4A61D /* Audio Manager */,
 				027811CC2889786700A4A61D /* Views */,
 				027811D028897A2E00A4A61D /* Support */,
 				027811DE28899C9100A4A61D /* CoreData */,
@@ -81,10 +81,10 @@
 		027811CC2889786700A4A61D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				027811BF2889753F00A4A61D /* ContentView.swift */,
+				027811BF2889753F00A4A61D /* Content View.swift */,
 				027811DA28897AD200A4A61D /* Recordings List.swift */,
-				027811DC2889932100A4A61D /* PlayerBar.swift */,
-				0236343D288A96D3008A0944 /* RecorderBar.swift */,
+				027811DC2889932100A4A61D /* Player Bar.swift */,
+				0236343D288A96D3008A0944 /* Recorder Bar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -97,13 +97,13 @@
 			path = Support;
 			sourceTree = "<group>";
 		};
-		027811D528897A6800A4A61D /* AudioManager */ = {
+		027811D528897A6800A4A61D /* Audio Manager */ = {
 			isa = PBXGroup;
 			children = (
-				027811D628897A8600A4A61D /* AudioRecorder.swift */,
-				027811D828897A9900A4A61D /* AudioPlayer.swift */,
+				027811D628897A8600A4A61D /* Audio Recorder.swift */,
+				027811D828897A9900A4A61D /* Audio Player.swift */,
 			);
-			path = AudioManager;
+			path = "Audio Manager";
 			sourceTree = "<group>";
 		};
 		027811DE28899C9100A4A61D /* CoreData */ = {
@@ -185,13 +185,13 @@
 			files = (
 				027811B92889753F00A4A61D /* Voice Memos.swift in Sources */,
 				027811BB2889753F00A4A61D /* Persistence.swift in Sources */,
-				027811D928897A9900A4A61D /* AudioPlayer.swift in Sources */,
-				0236343E288A96D3008A0944 /* RecorderBar.swift in Sources */,
-				027811C02889753F00A4A61D /* ContentView.swift in Sources */,
+				027811D928897A9900A4A61D /* Audio Player.swift in Sources */,
+				0236343E288A96D3008A0944 /* Recorder Bar.swift in Sources */,
+				027811C02889753F00A4A61D /* Content View.swift in Sources */,
 				027811BE2889753F00A4A61D /* VoiceRecTest.xcdatamodeld in Sources */,
-				027811DD2889932100A4A61D /* PlayerBar.swift in Sources */,
+				027811DD2889932100A4A61D /* Player Bar.swift in Sources */,
 				027811DB28897AD200A4A61D /* Recordings List.swift in Sources */,
-				027811D728897A8600A4A61D /* AudioRecorder.swift in Sources */,
+				027811D728897A8600A4A61D /* Audio Recorder.swift in Sources */,
 				027811D428897A5600A4A61D /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
